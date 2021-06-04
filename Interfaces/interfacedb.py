@@ -9,6 +9,9 @@ from Nucleo.Clases.libros import libros
 class Bibliotecario(ABC):
     #listo
     @abstractmethod
+    def checkIfExist(self,titulo:str):
+        pass
+    @abstractmethod
     def guardarLibro(self, libro:libros):
         pass
     @abstractmethod

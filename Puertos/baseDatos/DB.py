@@ -39,6 +39,13 @@ class BibliotecarioEx(Bibliotecario):
             return True
         else:
             return False
+            pass
+        pass
+    def checkIfExist(self, titulo: str):
+        if self.col.count_documents({"Titulo":titulo}, limit = 1) != 0:
+            return True
+        else:
+            return False
 
     def guardarMuchosLibros(self, listaLibros:list):
         guardado=[]
