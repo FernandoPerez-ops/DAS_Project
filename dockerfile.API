@@ -1,0 +1,14 @@
+FROM python:3.8
+
+WORKDIR /usr/src
+COPY Puertos/baseDatos /usr/src/Puertos/baseDatos
+COPY Nucleo/Clases /usr/src/Nucleo/Clases
+COPY Interfaces /usr/src/Interfaces
+COPY Puertos/API /usr/src/Puertos/API
+
+RUN pip install --upgrade pip
+RUN pip install --no-cache-dir -r Puertos/API/Requiriments.txt
+
+EXPOSE 5000
+
+CMD ["python3","Puertos/API/app.py"]
