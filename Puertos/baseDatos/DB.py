@@ -3,23 +3,15 @@ p = os.path.abspath('.')
 sys.path.insert(1, p)
 
 from pymongo import MongoClient
-<<<<<<< HEAD
 from Nucleo.Clases.libros import libros as libro
 from Puertos.Interfaces.BaseDatos.baseDatos import Bibliotecario
-=======
-from Nucleo.Clases.libros import libros
-from Interfaces.interfacedb import Bibliotecario
->>>>>>> db5bc6e29f1fd6f8833a455c4bafbea6f2df053a
 
 class BibliotecarioEx(Bibliotecario):
     ### ATENCION AQUI: poner el puerto de tu base de mongo
-
-    mongo_client = MongoClient('mongodb://root:root@mongo:27017/')
-
+    mongo_client = MongoClient(host="localhost",port=27017)
     db = mongo_client["project"]
     col = db["libros"]
 
-<<<<<<< HEAD
     def guardarlibro(self, libros: libro):
         titulo = libros.getTitulo()
         autor = libro.getAutor()
@@ -29,17 +21,6 @@ class BibliotecarioEx(Bibliotecario):
         idioma = libro.getIdioma()
         numPaginas = libro.getNumPaginas()
         descripcion = libro.getDescripcion()
-=======
-    def guardarLibro(self, libros: libros):
-        titulo = libros.getTitulo()
-        autor = libros.getAutor()
-        anoLanzamiento = libros.getAnoLanzamiento()
-        categoria = libros.getCategoria()
-        editorial = libros.getEditorial()
-        idioma = libros.getIdioma()
-        numPaginas = libros.getNumPaginas()
-        descripcion = libros.getDescripcion()
->>>>>>> db5bc6e29f1fd6f8833a455c4bafbea6f2df053a
         dicc = {
             "Titulo" : titulo,
             "Autor" : autor,
@@ -52,7 +33,6 @@ class BibliotecarioEx(Bibliotecario):
         }
 
         self.col.insert_one(dicc)
-<<<<<<< HEAD
         if self.col.count_documents({"Titulo":libro.getTitulo()}, limit = 1) != 0:
             return True
         else:
@@ -86,44 +66,6 @@ class BibliotecarioEx(Bibliotecario):
             return True
         else:
             return False
-=======
-        if self.col.count_documents({"Titulo":libros.getTitulo()}, limit = 1) != 0:
-            return True
-        else:
-            return False
-            pass
-        pass
-    def checkIfExist(self, titulo: str):
-        if self.col.count_documents({"Titulo":titulo}, limit = 1) != 0:
-            return True
-        else:
-            return False
-
-    def guardarMuchosLibros(self, listaLibros:list):
-        guardado=[]
-        for i in range(0,len(listaLibros)):
-            titulo = listaLibros[i].getTitulo()
-            autor = listaLibros[i].getAutor()
-            anoLanzamiento = listaLibros[i].getAnoLanzamiento()
-            categoria = listaLibros[i].getCategoria()
-            editorial = listaLibros[i].getEditorial()
-            idioma = listaLibros[i].getIdioma()
-            numPaginas = listaLibros[i].getNumPaginas()
-            descripcion = listaLibros[i].getDescripcion()
-            dicc = {
-                "Titulo" : titulo,
-                "Autor" : autor,
-                "Año Lanzamiento" : anoLanzamiento,
-                "Categoria" : categoria,
-                "Editorial" : editorial,
-                "Idioma" : idioma,
-                "Nummero de Paginas" : numPaginas,
-                "Descripcion" : descripcion
-            }
-            guardado.append(dicc)
-        
-        self.col.insert_many(guardado)
->>>>>>> db5bc6e29f1fd6f8833a455c4bafbea6f2df053a
 
     def libroPorTitulo(self, titulo: str):
         busquedalibro = self.col.find_one({"Titulo":titulo})
@@ -190,8 +132,6 @@ class BibliotecarioEx(Bibliotecario):
             busquedaedit.append(editoriales)
         return busquedaedit
 
-
-
     def librosPorIdioma(self, idioma: str):
         busquedaidioma=[]
         busquedadb = self.col.find({"Editorial":idioma})
@@ -208,6 +148,7 @@ class BibliotecarioEx(Bibliotecario):
             idiomas = libros(titulo,autor,anoLanzamiento,categoria,editorial,idioma,numPaginas,descripcion)
             busquedaidioma.append(idiomas)
         return busquedaidioma
+
     def librosupdateT(self, titulo: str):
         busquedadb = self.col.find({"Titulo":titulo})
         d = input("Cuales el dato que desea cambiar del libro?")
@@ -260,4 +201,6 @@ class BibliotecarioEx(Bibliotecario):
         if self.col.count_documents({"Titulo":libro.getTitulo()}, limit = 1) != 0:
             return "Libro no eliminado"
         else:
-            return "Libro eliminado"
+            return "libro Elminado"
+        
+        
