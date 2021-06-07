@@ -2,8 +2,6 @@ import os, sys
 p = os.path.abspath('.')
 sys.path.insert(1, p)
 
-from Nucleo.Clases.libros import libros
-from Puertos.baseDatos.DB import BibliotecarioEx
 from flask import Flask, request
 from flask_pymongo import PyMongo
 
@@ -11,8 +9,10 @@ app = Flask(__name__)
 app.config["MONGO_URI"] = "mongodb://root:root@mongo:27017/project"
 mongo = PyMongo(app)
 
-@app.route('/libros', methods=['POST'])
+@app.route('/libros', methods=['GET'])
 def create_libro():
+    return {"si jalo":"200"}
+    """
     titulo = request.json['Titulo']
     autor = request.json['Autor']
     anoLanzamiento = request.json['Año Lanzamiento']
@@ -21,7 +21,6 @@ def create_libro():
     idioma = request.json['Idioma']
     numPaginas = request.json['Numero de Paginas']
     descripcion = request.json['Descripcion']
-    x = libros(titulo,autor,anoLanzamiento,categoria,editorial,idioma,numPaginas,descripcion)
 
     if mongo.db.libros.count_documents({"Titulo":titulo}, limit=1):
         return {'Fallo':'Libro ya existe'}
@@ -37,7 +36,7 @@ def create_libro():
             "Descripcion" : descripcion
         })
         return {'Exito':'Libro guardado'}
-    
+    """
     
 
 if __name__ == '__main__':

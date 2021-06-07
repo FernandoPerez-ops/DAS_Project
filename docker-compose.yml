@@ -47,15 +47,17 @@ services:
             - mongo
         links:
             - mongo:mongo
-    #Contenedor C
+    #Contenedor D
     booksapi:
       container_name: API
       build:
-          context: .
-          dockerfile: dockerfile.API
+          context: ./Puertos/API
+          dockerfile: dockerfile
       restart: on-failure:10
       depends_on: 
           - mongo
+      networks: 
+        - app-network
       ports:
         - 5000:5000
       links:
