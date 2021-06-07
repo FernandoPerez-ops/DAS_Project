@@ -3,8 +3,13 @@ p = os.path.abspath('.')
 sys.path.insert(1, p)
 
 from pymongo import MongoClient
+<<<<<<< HEAD
+from Nucleo.Clases.libros import libros as libro
+from Puertos.Interfaces.BaseDatos.baseDatos import Bibliotecario
+=======
 from Nucleo.Clases.libros import libros
 from Interfaces.interfacedb import Bibliotecario
+>>>>>>> db5bc6e29f1fd6f8833a455c4bafbea6f2df053a
 
 class BibliotecarioEx(Bibliotecario):
     ### ATENCION AQUI: poner el puerto de tu base de mongo
@@ -14,6 +19,17 @@ class BibliotecarioEx(Bibliotecario):
     db = mongo_client["project"]
     col = db["libros"]
 
+<<<<<<< HEAD
+    def guardarlibro(self, libros: libro):
+        titulo = libros.getTitulo()
+        autor = libro.getAutor()
+        anoLanzamiento = libro.getAnoLanzamiento()
+        categoria = libro.getCategoria()
+        editorial = libro.getEditorial()
+        idioma = libro.getIdioma()
+        numPaginas = libro.getNumPaginas()
+        descripcion = libro.getDescripcion()
+=======
     def guardarLibro(self, libros: libros):
         titulo = libros.getTitulo()
         autor = libros.getAutor()
@@ -23,6 +39,7 @@ class BibliotecarioEx(Bibliotecario):
         idioma = libros.getIdioma()
         numPaginas = libros.getNumPaginas()
         descripcion = libros.getDescripcion()
+>>>>>>> db5bc6e29f1fd6f8833a455c4bafbea6f2df053a
         dicc = {
             "Titulo" : titulo,
             "Autor" : autor,
@@ -35,6 +52,41 @@ class BibliotecarioEx(Bibliotecario):
         }
 
         self.col.insert_one(dicc)
+<<<<<<< HEAD
+        if self.col.count_documents({"Titulo":libro.getTitulo()}, limit = 1) != 0:
+            return True
+        else:
+            return False
+
+    def guardarMuchosLibros(self, listaLibros:list):
+        guardado=[]
+        for i in listaLibros:
+            titulo = libro.getTitulo(i)
+            autor = libro.getAutor(i)
+            anoLanzamiento = libro.getAnoLanzamiento(i)
+            categoria = libro.getCategoria(i)
+            editorial = libro.getEditorial(i)
+            idioma = libro.getIdioma(i)
+            numPaginas = libro.getNumPaginas(i)
+            descripcion = libro.getDescripcion(i)
+            dicc = {
+                "Titulo" : titulo,
+                "Autor" : autor,
+                "Año Lanzamiento" : anoLanzamiento,
+                "Categoria" : categoria,
+                "Editorial" : editorial,
+                "Idioma" : idioma,
+                "Nummero de Paginas" : numPaginas,
+                "Descripcion" : descripcion
+            }
+            guardado.append(dicc)
+        
+        self.col.insert_many(guardado)
+        if self.col.count_documents({"Titulo":libro.getTitulo()}, limit = 1) != 0:
+            return True
+        else:
+            return False
+=======
         if self.col.count_documents({"Titulo":libros.getTitulo()}, limit = 1) != 0:
             return True
         else:
@@ -71,6 +123,7 @@ class BibliotecarioEx(Bibliotecario):
             guardado.append(dicc)
         
         self.col.insert_many(guardado)
+>>>>>>> db5bc6e29f1fd6f8833a455c4bafbea6f2df053a
 
     def libroPorTitulo(self, titulo: str):
         busquedalibro = self.col.find_one({"Titulo":titulo})
@@ -155,3 +208,56 @@ class BibliotecarioEx(Bibliotecario):
             idiomas = libros(titulo,autor,anoLanzamiento,categoria,editorial,idioma,numPaginas,descripcion)
             busquedaidioma.append(idiomas)
         return busquedaidioma
+    def librosupdateT(self, titulo: str):
+        busquedadb = self.col.find({"Titulo":titulo})
+        d = input("Cuales el dato que desea cambiar del libro?")
+
+        titulo = busquedadb["Titulo"]
+        if d == "autor" or d =="Autor":
+            autor = input("Digite el dato a cambiar\n")
+            self.col.find_one_and_update({"Titulo":titulo},{"$set":{"Autor":autor}} )
+
+        if d == "Año Lanzamiento" or d =="año de lanzamiento" or d =="Año de lanzamiento":
+            anoLanzamiento = input("Digite el dato a cambiar\n")
+            self.col.find_one_and_update({"Titulo":titulo}, {"$set":{"Año Lanzamiento":anoLanzamiento}})
+        
+        elif d == "categoria" or d =="Categoria":
+            categoria = input("Digite el dato a cambiar\n")
+            self.col.find_one_and_update({"Titulo":titulo}, {"$set":{"Categoria":categoria}})
+
+        elif d == "editorial" or d =="Editorial":
+            editorial = input("Digite el dato a cambiar\n")
+            self.col.find_one_and_update({"Titulo":titulo}, {"$set":{"Editorial":editorial}})
+       
+        elif d == "idioma" or d =="Idioma":
+            idioma = input("Digite el dato a cambiar\n")
+            self.col.find_one_and_update({"Titulo":titulo}, {"$set":{"Idioma":idioma}})
+        
+        elif d == "numPAginas" or d =="Numero de paginas" or d=="numero de paginas":
+            numPaginas = input("Digite el dato a cambiar\n")
+            self.col.find_one_and_update({"Titulo":titulo},{"$set":{"Nummero de Paginas":numPaginas}} )
+        
+        elif d == "descripcion" or d =="Descripcion":
+            descripcion = input("Digite el dato a cambiar\n")
+            self.col.find_one_and_update({"Titulo":titulo},{"$set":{"Descripcion":descripcion}})
+        else:
+            print("Dato no espesificado, intentelo de nuevo plis :D")
+        
+        busquedalibro = self.col.find_one({"Titulo":titulo})
+        titulo = busquedalibro["Titulo"]
+        autor = busquedalibro["Autor"]
+        anoLanzamiento = busquedalibro["Año Lanzamiento"]
+        categoria = busquedalibro["Categoria"]
+        editorial = busquedalibro["Editorial"]
+        idioma = busquedalibro["Idioma"]
+        numPaginas = busquedalibro["Nummero de Paginas"]
+        descripcion = busquedalibro["Descripcion"]
+        buscarnombre = libros(titulo,autor,anoLanzamiento,categoria,editorial,idioma,numPaginas,descripcion)
+        return buscarnombre
+
+    def borrarlibro(self, titulo: str):
+        busquedadb = self.col.delete_one({"Titulo":titulo})
+        if self.col.count_documents({"Titulo":libro.getTitulo()}, limit = 1) != 0:
+            return "Libro no eliminado"
+        else:
+            return "Libro eliminado"
