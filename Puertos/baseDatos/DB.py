@@ -205,7 +205,7 @@ class BibliotecarioEx(Bibliotecario):
 
     def borrarlibro(self, titulo: str):
         busquedadb = self.col.delete_one({"Titulo":titulo})
-        if self.col.count_documents({"Titulo":libro.getTitulo()}, limit = 1) != 0:
+        if self.col.count_documents({"Titulo":libros.getTitulo()}, limit = 1) != 0:
             return "Libro no eliminado"
         else:
             return "libro Elminado"

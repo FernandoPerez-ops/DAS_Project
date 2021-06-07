@@ -36,36 +36,36 @@ def add_one():
     return json.jsonify(message="success")
 
 @app.route('/libros',methods=['GET'])
-def get_one():
+def get_all():
     libros = db.libros.find()
     respuesta = json_util.dumps(libros)
     return Response(respuesta, mimetype='application/json')
 
-@app.route('/libros/<Titulo>', methods=['GET'])
+@app.route('/libros/Titulo/<Titulo>', methods=['GET'])
 def get_book(Titulo):
     libro = db.libros.find_one({'Titulo':Titulo})
     respuesta = json_util.dumps(libro)
     return respuesta
 
-@app.route('/libros/<Autor>', methods=['GET'])
+@app.route('/libros/Autor/<Autor>', methods=['GET'])
 def get_book(Autor):
     libro = db.libros.find_one({'Autor':Autor})
     respuesta = json_util.dumps(libro)
     return respuesta
 
-@app.route('/libros/<Idioma>', methods=['GET'])
+@app.route('/libros/Idioma/<Idioma>', methods=['GET'])
 def get_book(Idioma):
     libro = db.libros.find_one({'Autor':Idioma})
     respuesta = json_util.dumps(libro)
     return respuesta
 
-@app.route('/libros/<Anio>', methods=['GET'])
+@app.route('/libros/Anio/<Anio>', methods=['GET'])
 def get_book(Anio):
     libro = db.libros.find_one({'Año Lanzamiento':Anio})
     respuesta = json_util.dumps(libro)
     return respuesta
 
-@app.route('/libros/<Editorial>', methods=['GET'])
+@app.route('/libros/Editorial/<Editorial>', methods=['GET'])
 def get_book(Editorial):
     libro = db.libros.find_one({'Año Lanzamiento':Editorial})
     respuesta = json_util.dumps(libro)
