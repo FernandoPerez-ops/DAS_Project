@@ -155,3 +155,59 @@ class BibliotecarioEx(Bibliotecario):
             idiomas = libros(titulo,autor,anoLanzamiento,categoria,editorial,idioma,numPaginas,descripcion)
             busquedaidioma.append(idiomas)
         return busquedaidioma
+
+    def librosupdateT(self, titulo: str):
+        busquedadb = self.col.find({"Titulo":titulo})
+        d = input("Cuales el dato que desea cambiar del libro?")
+
+        titulo = busquedadb["Titulo"]
+        if d == "autor" or d =="Autor":
+            autor = input("Digite el dato a cambiar\n")
+            self.col.find_one_and_update({"Titulo":titulo},{"$set":{"Autor":autor}} )
+
+        if d == "Año Lanzamiento" or d =="año de lanzamiento" or d =="Año de lanzamiento":
+            anoLanzamiento = input("Digite el dato a cambiar\n")
+            self.col.find_one_and_update({"Titulo":titulo}, {"$set":{"Año Lanzamiento":anoLanzamiento}})
+        
+        elif d == "categoria" or d =="Categoria":
+            categoria = input("Digite el dato a cambiar\n")
+            self.col.find_one_and_update({"Titulo":titulo}, {"$set":{"Categoria":categoria}})
+
+        elif d == "editorial" or d =="Editorial":
+            editorial = input("Digite el dato a cambiar\n")
+            self.col.find_one_and_update({"Titulo":titulo}, {"$set":{"Editorial":editorial}})
+       
+        elif d == "idioma" or d =="Idioma":
+            idioma = input("Digite el dato a cambiar\n")
+            self.col.find_one_and_update({"Titulo":titulo}, {"$set":{"Idioma":idioma}})
+        
+        elif d == "numPAginas" or d =="Numero de paginas" or d=="numero de paginas":
+            numPaginas = input("Digite el dato a cambiar\n")
+            self.col.find_one_and_update({"Titulo":titulo},{"$set":{"Nummero de Paginas":numPaginas}} )
+        
+        elif d == "descripcion" or d =="Descripcion":
+            descripcion = input("Digite el dato a cambiar\n")
+            self.col.find_one_and_update({"Titulo":titulo},{"$set":{"Descripcion":descripcion}})
+        else:
+            print("Dato no espesificado, intentelo de nuevo plis :D")
+        
+        busquedalibro = self.col.find_one({"Titulo":titulo})
+        titulo = busquedalibro["Titulo"]
+        autor = busquedalibro["Autor"]
+        anoLanzamiento = busquedalibro["Año Lanzamiento"]
+        categoria = busquedalibro["Categoria"]
+        editorial = busquedalibro["Editorial"]
+        idioma = busquedalibro["Idioma"]
+        numPaginas = busquedalibro["Nummero de Paginas"]
+        descripcion = busquedalibro["Descripcion"]
+        buscarnombre = libros(titulo,autor,anoLanzamiento,categoria,editorial,idioma,numPaginas,descripcion)
+        return buscarnombre
+
+    def borrarlibro(self, titulo: str):
+        busquedadb = self.col.delete_one({"Titulo":titulo})
+        if self.col.count_documents({"Titulo":libro.getTitulo()}, limit = 1) != 0:
+            return "Libro no eliminado"
+        else:
+            return "libro Elminado"
+        
+        
