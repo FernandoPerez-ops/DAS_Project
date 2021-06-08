@@ -1,0 +1,460 @@
+{
+	"info": {
+		"_postman_id": "4a345fc7-4372-4fc4-9138-6402bbb88ebb",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://172.26.0.3:5000/libros/agregar",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Titulo\":\"i wanna die\",\n    \"Autor\":\"Hiroshi Gloria\",\n    \"Año Lanzamiento\":2021,\n    \"Categoria\":\"NoEsUnChiste\",\n    \"Editorial\":\"David's writes\",\n    \"Idioma\":\"Guardianita\",\n    \"Nummero de Paginas\":10,\n    \"Descripcion\":\"Es real, quiero morir\"\n}"
+				},
+				"url": {
+					"raw": "http://172.26.0.3:5000/libros/agregar",
+					"protocol": "http",
+					"host": [
+						"172",
+						"26",
+						"0",
+						"3"
+					],
+					"port": "5000",
+					"path": [
+						"libros",
+						"agregar"
+					],
+					"query": [
+						{
+							"key": "libro",
+							"value": "asdf",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				},
+				"description": "prueba de post donde agrega un libro nuevo"
+			},
+			"response": [
+				{
+					"name": "http://172.26.0.3:5000/libros/agregar",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Titulo\":\"i wanna die\",\n    \"Autor\":\"Hiroshi Gloria\",\n    \"Año Lanzamiento\":2021,\n    \"Categoria\":\"NoEsUnChiste\",\n    \"Editorial\":\"David's writes\",\n    \"Idioma\":\"Guardianita\",\n    \"Nummero de Paginas\":10,\n    \"Descripcion\":\"Es real, quiero morir\"\n}"
+						},
+						"url": {
+							"raw": "http://172.26.0.3:5000/libros/agregar",
+							"protocol": "http",
+							"host": [
+								"172",
+								"26",
+								"0",
+								"3"
+							],
+							"port": "5000",
+							"path": [
+								"libros",
+								"agregar"
+							],
+							"query": [
+								{
+									"key": "libro",
+									"value": "asdf",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "22"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.8.10"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 07 Jun 2021 19:41:38 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "http://172.30.0.5:5000/libros/Voice security fund someone beautiful sign.",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://192.168.80.5:5000/libros/Titulo/Along bill national plant.",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"80",
+						"5"
+					],
+					"port": "5000",
+					"path": [
+						"libros",
+						"Titulo",
+						"Along bill national plant."
+					]
+				},
+				"description": "prueba de GET para jalar todos los libros\n"
+			},
+			"response": [
+				{
+					"name": "http://172.30.0.5:5000/libros/Voice security fund someone beautiful sign.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://172.30.0.5:5000/libros/Voice security fund someone beautiful sign.",
+							"protocol": "http",
+							"host": [
+								"172",
+								"30",
+								"0",
+								"5"
+							],
+							"port": "5000",
+							"path": [
+								"libros",
+								"Voice security fund someone beautiful sign."
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "686"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.8.10"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 07 Jun 2021 20:31:09 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\"_id\": {\"$oid\": \"60b881881f4aa970bd335af6\"}, \"Titulo\": \"Voice security fund someone beautiful sign.\", \"Autor\": \"Thomas Holder\", \"A\\u00f1o Lanzamiento\": \"1984\", \"Categoria\": \"Filosofia.\", \"Editorial\": \"Young father.\", \"Idioma\": \"Italiano.\", \"Nummero de Paginas\": 482, \"Descripcion\": \"Sure along region go do major special beautiful beyond present young agree none control whose leg future attention certain production themselves but activity side itself executive follow film gas add hope for watch door red TV fall her major range economy agreement protect generation size dinner represent large avoid remember unit loss certainly now above several condition rise sit service detail.\"}"
+				},
+				{
+					"name": "http://172.30.0.5:5000/libros/Voice security fund someone beautiful sign.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://192.168.80.5:5000/libros/Titulo/Along bill national plant.",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"80",
+								"5"
+							],
+							"port": "5000",
+							"path": [
+								"libros",
+								"Titulo",
+								"Along bill national plant."
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "656"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.8.10"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 07 Jun 2021 23:52:39 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\"_id\": {\"$oid\": \"60b8818a1f4aa970bd335af9\"}, \"Titulo\": \"Along bill national plant.\", \"Autor\": \"Elizabeth Smith\", \"A\\u00f1o Lanzamiento\": \"1994\", \"Categoria\": \"Ciencia Ficcion.\", \"Editorial\": \"Great.\", \"Idioma\": \"Frances.\", \"Nummero de Paginas\": 435, \"Descripcion\": \"Seat including factor including reality investment quality financial address land avoid own white onto when physical level site foreign face leave environment laugh again third seven live fly light it final inside fill bed lot money ahead stuff as style would him chance rest senior all talk ability back laugh field instead end soldier paper capital million skin they report hard sense.\"}"
+				}
+			]
+		},
+		{
+			"name": "http://192.168.0.4:5000/libros",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.0.4:5000/libros/borrar/60b8818a1f4aa970bd335af7",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"4"
+					],
+					"port": "5000",
+					"path": [
+						"libros",
+						"borrar",
+						"60b8818a1f4aa970bd335af7"
+					]
+				},
+				"description": "GET donde obtiene toda la base de datos"
+			},
+			"response": [
+				{
+					"name": "http://192.168.0.4:5000/libros",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.0.4:5000/libros/borrar/60b8818a1f4aa970bd335af7",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"0",
+								"4"
+							],
+							"port": "5000",
+							"path": [
+								"libros",
+								"borrar",
+								"60b8818a1f4aa970bd335af7"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "22"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.8.10"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 07 Jun 2021 22:55:03 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "http://192.168.80.5:5000/libros/actualizar/60b8818a1f4aa970bd335af8",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Titulo\":\"Las aventuras de Juanin\",\n    \"Autor\":\"Juanin Juanson\",\n    \"Año Lanzamiento\":2070,\n    \"Categoria\":\"aventuras\",\n    \"Editorial\":\"Juanin Tales\",\n    \"Idioma\":\"Sanscrito\",\n    \"Nummero de Paginas\":20000,\n    \"Descripcion\":\"Juanin, un intrepido aventurero, pero pesimo escritor, se animo a escribir sus escritos bien escritos\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.80.5:5000/libros/actualizar/60b8818a1f4aa970bd335af8",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"80",
+						"5"
+					],
+					"port": "5000",
+					"path": [
+						"libros",
+						"actualizar",
+						"60b8818a1f4aa970bd335af8"
+					]
+				},
+				"description": "Actualizacion de un libro"
+			},
+			"response": [
+				{
+					"name": "http://192.168.80.5:5000/libros/actualizar/60b8818a1f4aa970bd335af8",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Titulo\":\"Las aventuras de Juanin\",\n    \"Autor\":\"Juanin Juanson\",\n    \"Año Lanzamiento\":2070,\n    \"Categoria\":\"aventuras\",\n    \"Editorial\":\"Juanin Tales\",\n    \"Idioma\":\"Sanscrito\",\n    \"Nummero de Paginas\":20000,\n    \"Descripcion\":\"Juanin, un intrepido aventurero, pero pesimo escritor, se animo a escribir sus escritos bien escritos\"\n}"
+						},
+						"url": {
+							"raw": "http://192.168.80.5:5000/libros/actualizar/60b8818a1f4aa970bd335af8",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"80",
+								"5"
+							],
+							"port": "5000",
+							"path": [
+								"libros",
+								"actualizar",
+								"60b8818a1f4aa970bd335af8"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "22"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.8.10"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 07 Jun 2021 23:49:00 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "http://192.168.80.5:5000/libros",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.80.5:5000/libros",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"80",
+						"5"
+					],
+					"port": "5000",
+					"path": [
+						"libros"
+					]
+				},
+				"description": "Obtiene todos los libros\n"
+			},
+			"response": []
+		}
+	]
+}
