@@ -10,7 +10,6 @@ class BibliotecarioEx(Bibliotecario):
     ### ATENCION AQUI: poner el puerto de tu base de mongo
 
     mongo_client = MongoClient('mongodb://root:root@mongo:27017/')
-
     db = mongo_client["project"]
     col = db["libros"]
 
@@ -209,5 +208,3 @@ class BibliotecarioEx(Bibliotecario):
             return "Libro no eliminado"
         else:
             return "libro Elminado"
-        
-        
