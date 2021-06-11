@@ -8,4 +8,5 @@ Proyecto final para la materia de Diseño y Arquitectura de Software
 - Todas las ramas deben ser creadas en base a la rama **development**
 
 ## Como ejecutar:
-aun por escribir este rollo
+### Pasos a seguir:
+#### Paso 1:
