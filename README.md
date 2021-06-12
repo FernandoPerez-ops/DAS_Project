@@ -46,6 +46,10 @@ Para poder ejecutar este proyecto se requiere de tener instalado `docker` y `doc
 Nota: si se revisan los contenedores con <pre><code>docker ps
 </code></pre> se podra notar que solo estan los contenedores correspondientes a la base de datos, dbms y API ya que el contenedor con el generador se detiene una vez termine de guardar los libros falsos generados.
 
+## Videos
+- [Descargar video](https://drive.google.com/file/d/176ntSEO9cfQ1Lx-olHd3ECQCgAdprjJ-/view)
+- [Video en youtube](https://www.youtube.com/watch?v=eFfRrLqC6u0)
+
 Contibuyentes:
 * [David Hiroshi Gloria Kawasaki](https://github.com/Hanhoeng)
 * [Jose Fernando Perez Arroyo](https://github.com/FernandoPerez-ops)
